@@ -105,23 +105,13 @@ img {
               <p class=>
    {!! str_repeat('<i class="fas fa-star"></i>', floor($averageRating)) !!}
    {!! str_repeat('<i class="far fa-star"></i>', 5 - floor($averageRating)) !!}{{ $averageRating }}
-              </p>   
+              </p>
+
             </div>
-                 
-              <?php
-              /*
-            }else{
-            echo "no data";
-          }
-             // session
-            $title=$row['title'];  
-               
-            $insert = $model->rev_insert($userid,$id,$uname,$title,$d); 
-                    
-            */
-          ?>
-<form action="" method="post">        
-<div class="col-12">
+                
+            <form action="{{ route('add_review', $film->id) }}" method="POST" class="form-inline"> 
+            @csrf      
+<div class="col-4 col-12-xsmall">
     <h3>Rating</h3>
 <?php 
 /*
@@ -132,12 +122,23 @@ img {
     */
     ?>    
     <p><?php //echo round($rate, 1);?></p>
-    <div class="col-4 col-12-xsmall">
-    <input type="text" name="rate" id="rate" value="" placeholder="Rating">
-    </div>
-<textarea name="review" id="review" placeholder="Leave a review..." rows="6"></textarea>
+    <!-- <div class="col-4 col-12-xsmall">
+            <input type="text" name="rate" id="rate" value="" placeholder="Rating">
+    </div> -->
+              <div class="form-group">
+                  <label for="rating" class="mr-2">Rating:</label>
+                  <input type="number" id="rating" name="rating" min="1" max="5" class="form-control mr-2" placeholder="1-5" 
+                  style="color: black;">
+              </div>
+              <div class="form-group">
+                  <label for="review" class="mr-2">Comment:</label>
+                  <textarea id="review" name="review" class="form-control mr-2" rows="3"></textarea>
+              </div>
+              <input type="submit" value="Submit" class="btn btn-primary">
+
+<!-- <textarea name="review" id="review" placeholder="Leave a review..." rows="6"></textarea> -->
             
-            <div class="col-12">
+            <!-- <div class="col-12">
               
 <ul class="actions">
 
@@ -168,7 +169,7 @@ img {
   
     
 </ul>
-            </div>
+            </div> -->
         </div>
 </form>                  
                     
@@ -177,6 +178,9 @@ img {
 
 </section>
        
+
+@if(isset($reviews))
+  @foreach($reviews as $review)
 <div class="box">  
   <section >
       <h2>User Reviews</h2>  
@@ -191,11 +195,34 @@ img {
                   foreach($rows as $row){ 
 */
 ?>
+
+
+<!-- @if(isset($reviews))
+  @foreach($reviews as $review) -->
+      <!-- <div class="card" style="width: 18rem;">
+          <div class="card-body">
+              <p class="card-text">User: {{ $review->username }}</p> -->
+              <!-- <p class="card-text">Film: {{ $review->film_title }}</p> -->
+              <!-- <h5 class="card-title">Rating: {{ $review->rating }}</h5> -->
+              <!-- <h5 class="card-title">
+                {!! str_repeat('<i class="fas fa-star"></i>', $review->rating) !!}
+                {!! str_repeat('<i class="far fa-star"></i>', 5 - $review->rating) !!}
+            </h5> -->
+              <!-- <p class="card-text">Review: {{ $review->review }}</p> -->
+          <!-- </div> -->
+      <!-- </div> -->
+  <!-- @endforeach
+@endif -->
+
       <div class="box"> 
-        <h5 ><?php //echo $row['rating']; ?>/5</h5>
-<blockquote><?php //echo $row['review']; ?></blockquote>
-<span><h5 >Reviewed by:</h5>
-<h6 ><?php //echo $row['username']; ?></h6></span>
+      <p class="card-text">FILM TITLE: {{ $review->film_title }}</p>
+      <h5 class="card-title">Rating: {{ $review->rating }}  
+        {!! str_repeat('<i class="fas fa-star"></i>', $review->rating) !!}
+        {!! str_repeat('<i class="far fa-star"></i>', 5 - $review->rating) !!}
+      </h5>
+<blockquote><p class="card-text">Review: {{ $review->review }}</p></blockquote>
+<h5 >Reviewed by:</h5>
+<h4 > {{ $review->username }}</h4>
                 
        </div>
       
@@ -213,7 +240,9 @@ img {
       
 
     </section>              
-</div>              
+</div>
+@endforeach
+@endif              
 	            
 	
 
