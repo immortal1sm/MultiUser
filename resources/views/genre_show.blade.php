@@ -14,8 +14,9 @@
 		<!-- Wrapper -->
 			<div id="wrapper">
 
+				<!-- Header -->
 					<header id="header" class="alt">
-						<a href="{{url('home')}}" class="logo"><strong>Moviefy</strong> <span>by Laravel</span></a>
+						<a href="{{ route('client.index') }}" class="logo"><strong>Moviefy</strong> <span>by Laravel</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
@@ -24,13 +25,23 @@
 				<!-- Menu -->
 					<nav id="menu">
 						<ul class="links">
-							<li><a href="{{url('home')}}">Home</a></li>
+							<li><a id="user-list" href="{{ route('client.index') }}" style="text-decoration: none;">HOME &nbsp</a></li>
+              <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a></li>
 						</ul>
 						<ul class="actions stacked">
-							<li><a href="{{url('login')}}" class="button fit">Log In</a></li>
+                            <?php 
+                           /* if($cid!=' '){
+                                echo "<li><a href='logout.php' class='button primary'>Log Out</a></li>";
+                            }else{
+                                echo "<li><a href='login.php' class='button fit'>Log In</a></li>";
+                            }*/
+                            ?>
+							
 						</ul>
 					</nav>
+
                 </div>
+
 
         
 <div class="container">   
@@ -45,7 +56,7 @@
 <div class="box">
             
 <div class="row gtr-10 gtr-uniform ">
-@foreach ($genres as $genre)
+@forelse ($genres as $genre)
     <div class="card">
         <div class="col-4">
             <a href="{{ route('reviews.show', $genre->id) }}">
@@ -59,7 +70,9 @@
             </a>
         </div>
     </div>
-@endforeach
+@empty
+<h1>No Movies Found🤔</h1>
+@endforelse
 
   
 </div>
@@ -86,12 +99,14 @@ function myFunction() {
   }
 }
 </script>
-    		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+
+		<!-- Scripts -->
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+			<script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+			<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ asset('assets/js/util.js') }}"></script>
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+            <script src="{{ asset('assets/js/search.js') }}"></script>
 </html>

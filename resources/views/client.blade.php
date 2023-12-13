@@ -119,7 +119,7 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a id="user-list" href="{{ route('client.index') }}" style="text-decoration: none;">HOME &nbsp</a></li>
-                            <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a>></li>
+              <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a></li>
 						</ul>
 						<ul class="actions stacked">
                             <?php 
@@ -217,7 +217,7 @@
 										<img src="./images/genre/action/1.jpg" alt="Action" />
 									</span>
 									<header class="major">
-										<h3><a href="{{ route('genre_show', ['id' => 6]) }}" class="link">Action</a> <!-- 1 -->
+										<h3><a href="{{ route('genre_show', ['id' => 1]) }}" class="link">Action</a> <!-- 1 -->
                                         </h3>
                                         
 									</header>
@@ -236,7 +236,7 @@
 										<img src="./images/genre/adventure/2.jpg" alt="Adventure" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=2" class="link">Adventure</a>
+										<h3><a href="{{ route('genre_show', ['id' => 2]) }}" class="link">Adventure</a>
                                         </h3>
 									</header>
 								</article>
@@ -245,7 +245,7 @@
 										<img src="./images/genre/horror/2.jpg" alt="Horror" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=6" class="link">Horror</a>
+										<h3><a href="{{ route('genre_show', ['id' => 6]) }}" class="link">Horror</a>
                                         </h3>
 									</header>
 								</article>
@@ -254,7 +254,7 @@
 										<img src="./images/genre/drama/2.jpg" alt="Drama" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=4" class="link">Drama</a>
+										<h3><a href="{{ route('genre_show', ['id' => 4]) }}" class="link">Drama</a>
                                         </h3>
 									</header>
 								</article>
@@ -263,7 +263,7 @@
 										<img src="./images/genre/romance/2.jpg" alt="Romance" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=7" class="link">Romance</a>
+										<h3><a href="{{ route('genre_show', ['id' => 7]) }}" class="link">Romance</a>
                                         </h3>
 									</header>
 								</article>
@@ -272,7 +272,7 @@
 										<img src="./images/genre/scifi/1.jpg" alt="Scifi" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=8" class="link">Sci-Fi</a>
+										<h3><a href="{{ route('genre_show', ['id' => 8]) }}" class="link">Sci-Fi</a>
                                         </h3>
 									</header>
 								</article>
@@ -281,7 +281,7 @@
 										<img src="./images/genre/fantacy/2.jpg" alt="Fantacy" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=5" class="link">Fantacy</a>
+										<h3><a href="{{ route('genre_show', ['id' => 5]) }}" class="link">Fantacy</a>
                                         </h3>
 
 									</header>
@@ -315,53 +315,3 @@
 	</body>
 </html>
 
-
-    <div class="container">
-        <div class="row justify-content-center">
-
-                <div class="movie-genres">genres</div>
-                
-                <div class="movie-section" style="display:flex; justify-content:center; ">
-                    @foreach($films as $film)
-<a href="{{ route('reviews.show', $film->id) }}">
-   <div class="movie-card" style=" margin: 0 25px 10px 25px; border: 1px solid black">
-       <div class="movie">
-           <td>
-               <img src="{{ asset('storage/images/'.$film->img) }}" style="height: 100px;width:100px;">
-           </td>
-                            
-                            <h2>{{ $film->title }}</h2>
-                            <p>{{ $film->date }}</p>
-                            <p>{{ $film->director }}</p>
-                            @if($film->genre == 1)
-                                <p>Action</p>
-                            @elseif($film->genre == 2)
-                                <p>Adventure</p>
-                            @elseif($film->genre== 3)
-                                <p>Comedy</p>
-                            @elseif($film->genre == 4)
-                                <p>Drama</p>
-                            @elseif($film->genre == 5)
-                                <p>Fantasy</p>
-                            @elseif($film->genre== 6)
-                                <p>Horror</p>
-                            @elseif($film->genre == 7)
-                                <p>Romance</p>
-                            @elseif($film->genre == 8)
-                                <p>Sci-Fi</p>
-                            @endif
-                            <p>{{ $film->cast }}</p>
-                            <p>{{ $film->plot }}</p>
-                            <p>{{ $film->rating }}</p>
-                            
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-                
-
-
-                
-            </div>
-        </div>
-    </div>    
