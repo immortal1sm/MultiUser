@@ -17,13 +17,36 @@
     height: 900px;
     box-shadow: rgb(42, 38, 79) 0px 0px 10px;
     overflow: hidden;
-    margin: 50px auto;
+    
     background: rgb(42, 38, 79);
     border-width: 5px;
     border-style: solid;
     border-color: rgb(26, 22, 63);
     border-image: initial;
+    border-radius: 5px;
+}
+.card h3 {
+    font-size: 3em;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+}
+.card-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: rgb(42, 38, 79) 0px 0px 10px;
+    overflow: hidden;
+    
+    background: rgb(42, 38, 79);
+    
+    border-style: solid;
+    border-color: rgb(26, 22, 63);
+    border-image: initial;
     border-radius: 3px;
+    
 }
 
 </style>
@@ -58,9 +81,9 @@
    <div >
        <div >
            <div class="card">
-               <div >Add Film</div>
+               <h3>ADDING FILM FORM</h3>
 
-               <div >
+               <div class="card-items" >
                   <form method="POST" action="{{ route('films.store') }}" enctype="multipart/form-data">
                       @csrf
 
@@ -166,9 +189,10 @@
                               </button>
                           </div>
                       </div>
+                      
                   </form>
 
-                  <a href="/admin/">Go Back</a><br>
+                  
 
                   <script>
                     document.getElementById('img').addEventListener('change', function(e) {
@@ -181,7 +205,7 @@
 
 
 
-               </div>
+               </div><a href="/admin/">Go Back</a><br>
            </div>
        </div>
    </div>
