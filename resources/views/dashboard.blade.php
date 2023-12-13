@@ -76,16 +76,6 @@
             
 
 
-                <?php
-                /*
-				$model = new Model();
-                $rows = $model->fetch_user_review($userid);
-
-                if(!empty($rows)){
-                  foreach($rows as $row){ 
-					*/
-              ?>
-
 						<!-- Three -->
 							<section id="three">
 								<div class="inner">
@@ -100,16 +90,7 @@
 									</ul>
 								</div>
 							</section>
-                            <?php 
-                               /*
-							 }
-                              }else{
-                                echo '<header class="major">
-										<h2>No Reviews</h2>
-									</header>';
-                            }
-							*/
-                              ?>
+
 					</div>
 
 
