@@ -52,11 +52,6 @@
 <div class="box">
             
 <div class="row gtr-10 gtr-uniform ">
-
-
-
-
-
 @forelse ($genres as $genre)
     <div class="card">
         <div class="col-4">
