@@ -68,10 +68,7 @@
                                 </ul>
 							</div>
 						</div>
-                        
-                            <?php
-                           // }
-                          ?>  
+
 					</section>
 
 				<!-- Main -->
