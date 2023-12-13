@@ -14,6 +14,9 @@
 
 
 </head>
+<style>
+    
+</style>
 <body>
         @if(session('store_users'))
         <span>{{session('store_users')}}</span>

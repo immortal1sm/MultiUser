@@ -53,8 +53,6 @@
                 <li><a id="user-reviews" href="{{ route('review_list.showReviews') }}" style="text-decoration: none;">USER REVIEWS</a></li>
                 </ul>
         </header>
-            <hr>
-        <h2>Users</h2>
 
     <div class="container">
        
