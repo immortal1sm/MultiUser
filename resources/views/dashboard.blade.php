@@ -62,32 +62,19 @@
 							</header>
 							<div class="content">
                                 <ul class="alt">
-                                <p>Email:</p><li>{{ $user->email }}</li>
-                                <p>Birthday:</p><li>{{ $user->dob }}</li>   
-                                <p>Gender:</p><li>{{ $user->gender }}</li>
+                                <h4>Email:</h4><li>{{ $user->email }}</li>
+                                <h4>Birthday:</h4><li>{{ $user->dob }}</li>   
+                                <h4>Gender:</h4><li>{{ $user->gender }}</li>
                                 </ul>
 							</div>
 						</div>
-                        
-                            <?php
-                           // }
-                          ?>  
+
 					</section>
 
 				<!-- Main -->
 					<div id="main">
             
 
-
-                <?php
-                /*
-				$model = new Model();
-                $rows = $model->fetch_user_review($userid);
-
-                if(!empty($rows)){
-                  foreach($rows as $row){ 
-					*/
-              ?>
 
 						<!-- Three -->
 							<section id="three">
@@ -103,16 +90,7 @@
 									</ul>
 								</div>
 							</section>
-                            <?php 
-                               /*
-							 }
-                              }else{
-                                echo '<header class="major">
-										<h2>No Reviews</h2>
-									</header>';
-                            }
-							*/
-                              ?>
+
 					</div>
 
 
