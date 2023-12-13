@@ -217,7 +217,7 @@
 										<img src="./images/genre/action/1.jpg" alt="Action" />
 									</span>
 									<header class="major">
-										<h3><a href="{{ route('genre_show', ['id' => 6]) }}" class="link">Action</a> <!-- 1 -->
+										<h3><a href="{{ route('genre_show', ['id' => 1]) }}" class="link">Action</a> <!-- 1 -->
                                         </h3>
                                         
 									</header>
@@ -236,7 +236,7 @@
 										<img src="./images/genre/adventure/2.jpg" alt="Adventure" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=2" class="link">Adventure</a>
+										<h3><a href="{{ route('genre_show', ['id' => 2]) }}" class="link">Adventure</a>
                                         </h3>
 									</header>
 								</article>
@@ -245,7 +245,7 @@
 										<img src="./images/genre/horror/2.jpg" alt="Horror" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=6" class="link">Horror</a>
+										<h3><a href="{{ route('genre_show', ['id' => 6]) }}" class="link">Horror</a>
                                         </h3>
 									</header>
 								</article>
@@ -254,7 +254,7 @@
 										<img src="./images/genre/drama/2.jpg" alt="Drama" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=4" class="link">Drama</a>
+										<h3><a href="{{ route('genre_show', ['id' => 4]) }}" class="link">Drama</a>
                                         </h3>
 									</header>
 								</article>
@@ -263,7 +263,7 @@
 										<img src="./images/genre/romance/2.jpg" alt="Romance" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=7" class="link">Romance</a>
+										<h3><a href="{{ route('genre_show', ['id' => 7]) }}" class="link">Romance</a>
                                         </h3>
 									</header>
 								</article>
@@ -272,7 +272,7 @@
 										<img src="./images/genre/scifi/1.jpg" alt="Scifi" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=8" class="link">Sci-Fi</a>
+										<h3><a href="{{ route('genre_show', ['id' => 8]) }}" class="link">Sci-Fi</a>
                                         </h3>
 									</header>
 								</article>
@@ -281,7 +281,7 @@
 										<img src="./images/genre/fantacy/2.jpg" alt="Fantacy" />
 									</span>
 									<header class="major">
-										<h3><a href="genre_log.php?genre=5" class="link">Fantacy</a>
+										<h3><a href="{{ route('genre_show', ['id' => 5]) }}" class="link">Fantacy</a>
                                         </h3>
 
 									</header>
