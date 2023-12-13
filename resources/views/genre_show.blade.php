@@ -32,7 +32,6 @@
 					</nav>
                 </div>
 
-<!-- SELECT * FROM movie_review.film where genre = '6'; -->        
         
 <div class="container">   
     
@@ -46,12 +45,11 @@
 <div class="box">
             
 <div class="row gtr-10 gtr-uniform ">
-@foreach($genre as $genres)  
-
+@foreach ($genres as $genre)
     <div class="card">
         <div class="col-4">
             <a href="{{ route('reviews.show', $genre->id) }}">
-                <div class="img1" ><span class="image fit"><img src="{{ asset('storage/images/'.$genre->img) }}"  alt="" /></span></div>
+                <div class="img1" ><span class="image fit"><img src="{{ asset('storage/images/'.$genre->img) }}" alt="{{ $genre->title }}" /></span></div>
                 <div class="title">{{ $genre->title }}
                            <br> <p>{{ $genre->date }}</p>
                 </div>
@@ -62,6 +60,7 @@
         </div>
     </div>
 @endforeach
+
   
 </div>
 
@@ -70,7 +69,8 @@
 
     
 </div>        
-	</body>
+</body>
+
 <script>
 function myFunction() {
   var input = document.getElementById("Search");
