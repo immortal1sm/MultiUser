@@ -45,7 +45,12 @@
 <div class="box">
             
 <div class="row gtr-10 gtr-uniform ">
-@foreach ($genres as $genre)
+
+
+
+
+
+@forelse ($genres as $genre)
     <div class="card">
         <div class="col-4">
             <a href="{{ route('reviews.show', $genre->id) }}">
@@ -59,7 +64,9 @@
             </a>
         </div>
     </div>
-@endforeach
+@empty
+<h1>No Movies Found🤔</h1>
+@endforelse
 
   
 </div>
