@@ -103,7 +103,8 @@
     
     </style>
 	<body class="is-preload">
-
+		@extends('layouts.app')
+		@section('content') 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -120,6 +121,7 @@
 						<ul class="links">
 							<li><a id="user-list" href="{{ route('client.index') }}" style="text-decoration: none;">HOME &nbsp</a></li>
               <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a></li>
+			  
 						</ul>
 						<ul class="actions stacked">
                             <?php 
