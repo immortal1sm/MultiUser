@@ -82,8 +82,8 @@ public function showReviews()
 
 public function showByGenre($id)
 {
-  $genre = DB::table('films')->where('genre', $id)->first();
-  return view('genre_show', ['genre' => $genre]);
+ $genres = DB::table('films')->where('genre', $id)->get();
+ return view('genre_show', compact('genres'));
 }
 
 }
