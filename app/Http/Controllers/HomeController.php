@@ -29,7 +29,8 @@ class HomeController extends Controller
     }
     public function admin()
     {
-        return view('admin');
+        $films = Films::all(); // Retrieve all films from the database
+        return view('admin', compact('films')); // Pass the films to the view
     }
     public function client()
     {

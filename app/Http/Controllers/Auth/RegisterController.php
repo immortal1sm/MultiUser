@@ -34,7 +34,7 @@ class RegisterController extends Controller
     if (auth()->user()->user_type == 'client') {
         return '/client';
     }
-    return '/home';
+    return '/';
     }
 
     /**

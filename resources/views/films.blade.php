@@ -10,6 +10,50 @@
 
     <title>FILMS</title>
 </head>
+<style>
+    table {
+        max-width: 100%;
+    }
+    .filmadd {
+        justify-content: space-between;
+        text-align: center;
+        display: flex;
+        width: 110%;
+       
+
+        
+        
+    }
+    .filmadd h1 {
+        justify-content: space-between;
+        text-align: center;
+        display: flex;
+        float: left;
+        
+        
+    }
+    .filmadd a {
+        justify-content: space-between;
+        text-align: center;
+        display: flex;
+        float: right;
+        
+        
+    }
+    .filmadd a:hover {
+        
+       
+        text-align: center;
+        border-color: rgb(42, 38, 79);
+        background-color: rgb(153, 147, 208);
+        
+        height: 35px;
+        width: auto;
+        padding: auto;
+    }
+    tbody {}
+
+</style>
 <body>
         @if(session('store_films'))
         <span>{{session('store_films')}}</span>
@@ -17,8 +61,12 @@
         @if(session('update_films'))
         <span>{{session('update_films')}}</span>
         @endif
-        <h1>FILMS</h1>
-        <a href="{{ route('films.add') }}">Add Film</a>
+        <div class="filmadd">
+            <h1>FILMS</h1>
+        
+        <a href="{{ route('films.add') }}">ADD FILM</a>
+    </div>
+        
         
 
         <table class="table table-bordered table-striped table-hover table-dark">
@@ -42,7 +90,7 @@
    @if($film->img)
    <img src="{{ asset('storage/images/' . $film->img) }}" style=" width: 100px; height: 100px;">
 
-<h1>{{$film->img}}</h1>
+{{-- <h1>{{$film->img}}</h1> --}}
 @else 
  <span>No image found!</span>
 @endif

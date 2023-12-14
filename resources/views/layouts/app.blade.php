@@ -69,6 +69,7 @@ input {
 						<a href="{{ url('/') }}" class="logo"><strong>Moviefy</strong> <span>by Laravel</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
+                            
 						</nav>
 					</header>
 
@@ -105,7 +106,7 @@ input {
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ route('logout') }}"  class="d-none">
                                         @csrf
                                     </form>
                                 </div>
