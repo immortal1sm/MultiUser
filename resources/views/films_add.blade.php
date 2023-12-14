@@ -13,21 +13,86 @@
 <style>
 .card {
     position: relative;
-    width: 850px;
-    height: 900px;
+    width: 550px;
+    height: 100%;
     box-shadow: rgb(42, 38, 79) 0px 0px 10px;
     overflow: hidden;
-    margin: 50px auto;
+    
     background: rgb(42, 38, 79);
-    border-width: 5px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(26, 22, 63);
+    border-image: initial;
+    border-radius: 5px;
+}
+.card h3 {
+    font-size: 2em;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    
+}
+.card a {
+    position: relative;
+    display: block;
+    transition-duration: .3s;
+    margin-left: 100px ;
+}
+.card-items {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-shadow: rgb(42, 38, 79) 0px 0px 10px;
+    
+    
+    background: rgb(42, 38, 79);
+    
     border-style: solid;
     border-color: rgb(26, 22, 63);
     border-image: initial;
     border-radius: 3px;
+    
+}
+#saveBtn {
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
+#saveBtn:hover {
+    background: whitesmoke;
+    color: rgb(26, 22, 63);
+    border-color: inherit;
+}
+.btn {
+    justify-content: space-between;
+    text-align: center;
+    
+}
+#date {
+    background-color: rgba(212, 212, 255, 0.035);
+    border: none;
+    
+}
+#genre {
+    background-color: rgba(212, 212, 255, 0.035);
+    border: none;
+}
+.imgPreview{
+    display: inline-block;
+}
+#preview {
+    margin: 10px;
+    display: inline-flex;
 }
 
 </style>
 <body class="is-preload">
+    @extends('layouts.app')
+		@section('content') 
 
 		<!-- Wrapper -->
         <div id="wrapper">
@@ -58,9 +123,9 @@
    <div >
        <div >
            <div class="card">
-               <div >Add Film</div>
+               <h3>ADDING FILM FORM</h3>
 
-               <div >
+               <div class="card-items" >
                   <form method="POST" action="{{ route('films.store') }}" enctype="multipart/form-data">
                       @csrf
 
@@ -143,12 +208,14 @@
                               @enderror
                           </div>
                       </div>
-                      <div >
+                      <div class="imgPreview" >
                         <label for="img" class="col-md-4 col-form-label text-md-right">Image</label>
+                        
 
                         <div >
+                            
                         <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img" value="{{ old('img') }}" required autocomplete="img" autofocus>
-                            <img id="preview" src="#" alt="Image preview" style="display: none; width: 100px; height: 100px;">
+                        <img id="preview" src="#" alt="Image preview" style="display: none; width: 200px; height: 250px;">    
                             @error('img')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -160,15 +227,16 @@
                       
 
                       <div >
-                          <div >
-                              <button type="submit" class="btn btn-primary">
+                          <div class="btn">
+                              <button type="submit" class="btn btn-primary" id="saveBtn">
                               {{ __('Save') }}
                               </button>
                           </div>
                       </div>
+                      
                   </form>
 
-                  <a href="/admin/">Go Back</a><br>
+                  
 
                   <script>
                     document.getElementById('img').addEventListener('change', function(e) {
@@ -181,7 +249,7 @@
 
 
 
-               </div>
+               </div><a href="/admin/">Go Back</a><br>
            </div>
        </div>
    </div>
