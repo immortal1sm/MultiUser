@@ -18,9 +18,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
-		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}">
-		<noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}"></noscript>
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/review.css') }}">
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}"></noscript>
 
     <!-- Styles -->
 
@@ -73,7 +73,6 @@ input {
 						<a href="{{ url('/') }}" class="logo"><strong>Moviefy</strong> <span>by Laravel</span></a>
 						<nav>
 							<a href="#menu">Menu</a>
-                            
 						</nav>
 					</header>
 
@@ -125,7 +124,7 @@ input {
     </div>
 
 
-    <script>
+<script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '289377444078119',

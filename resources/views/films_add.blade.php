@@ -249,7 +249,7 @@
 
 
 
-               </div><a href="/admin/" class="button">Go Back</a><br>
+               </div><a href="/admin/" class="button small">Go Back</a><br>
            </div>
        </div>
    </div>

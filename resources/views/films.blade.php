@@ -19,9 +19,6 @@
         text-align: center;
         display: flex;
         width: 110%;
-       
-
-        
         
     }
     .filmadd h1 {
@@ -40,17 +37,7 @@
         
         
     }
-    .filmadd a:hover {
-        
-       
-        text-align: center;
-        border-color: rgb(42, 38, 79);
-        background-color: rgb(153, 147, 208);
-        
-        height: 35px;
-        width: auto;
-        padding: auto;
-    }
+
 
 
 </style>
@@ -61,26 +48,30 @@
         @if(session('update_films'))
         <span>{{session('update_films')}}</span>
         @endif
-        <div class="filmadd">
+
             <h1>FILMS</h1>
         
-        <a href="{{ route('films.add') }}">ADD FILM</a>
-    </div>
+        <a href="{{ route('films.add') }}" class="button small primary">ADD FILM</a>
+        <a href="/admin/" class="button small">BACK</a><br>
+       
         
         
+    <div class="custom-search">
+            <input class="form-control cutsom-input" type="search" placeholder="Search" data-table="table1" value=''> 
+    </div> 
 
-        <table class="table table-bordered table-striped table-hover table-dark">
+        <table class="table table-bordered table-striped table-hover table-dark table1"id="sortable">
             <thead>
                 <tr>
-                    <th scope="col">Image</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Director</th>
-                    <th scope="col">Genre</th>
-                    <th scope="col">Cast</th>
-                    <th scope="col">Plot</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Action</th>
+                    <th onclick="sortBy(0)" scope="col">Image</th>
+                    <th onclick="sortBy(1)" scope="col">Title</th>
+                    <th onclick="sortBy(2)" scope="col">Date</th>
+                    <th onclick="sortBy(3)" scope="col">Director</th>
+                    <th onclick="sortBy(4)" scope="col">Genre</th>
+                    <th onclick="sortBy(5)" scope="col">Cast</th>
+                    <th onclick="sortBy(6)" scope="col">Plot</th>
+                    <th onclick="sortBy(7)" scope="col">Rating</th>
+                    <th onclick="sortBy(8)" scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -114,7 +105,58 @@
             @endforeach
             </tbody>
         </table>
-        <a href="/admin/">BACK</a><br>
-        
+      
+        <script>
+
+cPrev = -1; 
+           
+function sortBy(c) {
+    rows = document.getElementById("sortable").rows.length;
+    columns = document.getElementById("sortable").rows[0].cells.length;
+    arrTable = [...Array(rows)].map(e => Array(columns)); 
+
+    for (ro=0; ro<rows; ro++) {
+        for (co=0; co<columns; co++) { 
+           
+            arrTable[ro][co] = document.getElementById("sortable").rows[ro].cells[co].innerHTML;
+        }
+    }
+
+    th = arrTable.shift();
+    
+    if (c !== cPrev) { 
+        arrTable.sort(
+            function (a, b) {
+                if (a[c] === b[c]) {
+                    return 0;
+                } else {
+                    return (a[c] < b[c]) ? -1 : 1;
+                }
+            }
+        );
+    } else { 
+        arrTable.reverse();
+    }
+    
+    cPrev = c; 
+
+    arrTable.unshift(th); 
+
+    for (ro=0; ro<rows; ro++) {
+        for (co=0; co<columns; co++) {
+            document.getElementById("sortable").rows[ro].cells[co].innerHTML = arrTable[ro][co];
+        }
+    }
+}
+</script>   
+		<!-- Scripts -->
+        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+			<script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>
+			<script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>
+			<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+			<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+			<script src="{{ asset('assets/js/util.js') }}"></script>
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+            <script src="{{ asset('assets/js/search.js') }}"></script>
 </body>
 </html>
