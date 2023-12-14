@@ -35,7 +35,7 @@
                     <th scope="col">Action</th>
                 </tr>
             </thead>
-            <tbody  >
+            <tbody>
             @foreach($films as $film)
 <tr>
    <td>
@@ -48,7 +48,7 @@
 @endif
 
    </td>
-                <td >{{$film->title}}</td>
+                <td>{{$film->title}}</td>
                 <td>{{$film->date}}</td>
                 <td>{{$film->director}}</td>
                 <td>{{$film->genre}}</td>
@@ -67,6 +67,6 @@
             </tbody>
         </table>
         <a href="/admin/">BACK</a><br>
-
+        
 </body>
 </html>
