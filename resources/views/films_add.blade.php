@@ -91,7 +91,7 @@
 
 </style>
 <body class="is-preload">
-    @extends('layouts.app')
+
 		@section('content') 
 
 		<!-- Wrapper -->
@@ -99,7 +99,7 @@
 
 <!-- Header -->
     <header id="header" class="alt">
-        <a href="{{url('/client')}}" class="logo"><strong>Moviefy</strong> <span>by PHP OOP</span></a>
+        <a href="{{url('/client')}}" class="logo"><strong>Moviefy</strong> <span>by Laravel</span></a>
         <nav>
             <a href="#menu">Menu</a>
         </nav>
@@ -108,8 +108,8 @@
 <!-- Menu -->
     <nav id="menu">
         <ul class="links">
-        <li><a href="{{url('/client')}}">Home</a></li>
-        <li><a href="{{url('/client')}}">Dashboard</a></li>
+        <li><a href="/admin/">Home</a></li>
+        <li><a href="/admin/">Dashboard</a></li>
         </ul>
         <ul class="actions stacked">
             
@@ -133,8 +133,8 @@
                           <label >Title</label>
 
                           <div >
-                              <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
-
+                              <input id="title" type="text" class="form-control @error('title') is-invalid @enderror " name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                             
                               @error('title')
                                  <span class="invalid-feedback" role="alert">
                                      <strong>{{ $message }}</strong>
@@ -228,7 +228,7 @@
 
                       <div >
                           <div class="btn">
-                              <button type="submit" class="btn btn-primary" id="saveBtn">
+                              <button type="submit" class="button" id="saveBtn">
                               {{ __('Save') }}
                               </button>
                           </div>
@@ -249,7 +249,7 @@
 
 
 
-               </div><a href="/admin/">Go Back</a><br>
+               </div><a href="/admin/" class="button">Go Back</a><br>
            </div>
        </div>
    </div>

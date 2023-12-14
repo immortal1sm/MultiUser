@@ -34,7 +34,7 @@
 							<li><a href="/admin" >Dashboard</a></li>
 						</ul>
 						<ul class="actions stacked">
-
+                        <a href="{{ route('logout') }}">"{{ route('logout') }}"</a>
 							
 						</ul>
 					</nav>
