@@ -103,8 +103,9 @@
     
     </style>
 	<body class="is-preload">
-		@extends('layouts.app')
-		@section('content') 
+    
+
+		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -117,12 +118,31 @@
 					</header>
 
 				<!-- Menu -->
-					<nav id="menu">
+				<nav id="menu">
+					<a   href="#" aria-haspopup="true" aria-expanded="false" v-pre>
+						{{ Auth::user()->name }}
+					</a>
 						<ul class="links">
 							<li><a id="user-list" href="{{ route('client.index') }}" style="text-decoration: none;">HOME &nbsp</a></li>
-              <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a></li>
-			  
+							  <li><a id="film-list" href="{{ route('dashboard.index') }}" style="text-decoration: none;">DASHBOARD &nbsp</a></li>
+							  <li >
+                                
+
+                                <div  aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}"class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+							  
 						</ul>
+						
 						<ul class="actions stacked">
                             <?php 
                            /* if($cid!=' '){
@@ -134,6 +154,8 @@
 							
 						</ul>
 					</nav>
+					
+					
 
 				<!-- Banner -->
                 <section id="banner" class="major">

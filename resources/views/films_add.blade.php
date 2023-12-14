@@ -91,6 +91,8 @@
 
 </style>
 <body class="is-preload">
+    @extends('layouts.app')
+		@section('content') 
 
 		<!-- Wrapper -->
         <div id="wrapper">
